@@ -48,10 +48,12 @@ Temperature Control
 
 ### Specifications and Supervisors
 
-The following specification is related to the conditions in which the input valve can be closed.  Thus, event
+The following specification is related to the conditions in which the input valve can be closed.  Thus, event $V_{in}^{close}$
+
+and line math $`a^2 + b^2 = c^2`$.
 
 ```math
-SE = \frac{\sigma}{\sqrt{n}}
+e^{i\pi} + 1 = 0
 ```
 
 ![E2](https://user-images.githubusercontent.com/12836843/156251621-a105b1b1-9e3b-4f3d-a6ef-8a6487138843.jpg)
