@@ -50,7 +50,9 @@ Temperature Control
 
 The following specification is related to the conditions in which the input valve can be closed.  Thus, event
 
-![formula](https://render.githubusercontent.com/render/math?math=V_{in}^{close})
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
 
 ![E2](https://user-images.githubusercontent.com/12836843/156251621-a105b1b1-9e3b-4f3d-a6ef-8a6487138843.jpg)
 
