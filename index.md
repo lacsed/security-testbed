@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Implementation of a Networked DES Control System
 
 You can use the [editor on GitHub](https://github.com/michelrodrigo/DES-control-system/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
