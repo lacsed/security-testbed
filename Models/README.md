@@ -22,7 +22,8 @@ We introduce the models of the subsystems. The models are an abstraction of the 
 
 Process
 
-![process](https://user-images.githubusercontent.com/12836843/156244315-d515c71d-462f-4573-9efd-d8ecadb2f699.jpg) 
+![process](https://user-images.githubusercontent.com/12836843/156244315-d515c71d-462f-4573-9efd-d8ecadb2f699.jpg)
+*Process automaton*
 
 Input valve
 
@@ -62,5 +63,7 @@ The next specification (left) is related to the conditions in which the output v
 
 The following specification (left) conditions the opening of the output valve to the conclusion of the temperature control. Hence, event $`V_{out}^{open}`$ can only occur after  the occurrence of event $`cooled`$. To achieve this behavior, the associated reduced supervisor (right) disables event $`V_{out}^{open}`$ at state 0.
 
+![E5](https://user-images.githubusercontent.com/12836843/156271576-9fdd90bd-0d42-4807-817c-8f6fa31d187f.jpg)
+*image_caption*
 
-![E5](https://user-images.githubusercontent.com/12836843/156269907-b3712585-df01-4a6d-8fa2-9cfaf5f7cbc9.jpg)
+
