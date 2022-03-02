@@ -48,8 +48,19 @@ Temperature Control
 
 ### Specifications and Supervisors
 
-The following specification (left) is related to the conditions in which the input valve can be closed.  Thus, event $`V_{in}^{close}`$ can only occur after at least one occurrence of event $`L_{H_1}`$. Tp accomplish this behavior, the associated reduced supervisor (right) disables event $`V_{in}^{close}`$ at state 1.
+The first specification (left) restricts the opening of the input valve to the beggining of the process. Event $`V_{in}^{open}`$ can only occur after the occurrence of event $`start`$. The associated supervisor (right) disables event $`V_{in}^{open}`$ at state 0.
+
+![E4](https://user-images.githubusercontent.com/12836843/156268551-aeca3454-4130-4dd8-ab80-186fbd43ea81.jpg)
+
+The following specification (left) is related to the conditions in which the input valve can be closed.  Thus, event $`V_{in}^{close}`$ can only occur after at least one occurrence of event $`L_{H_1}`$. To achieve this behavior, the associated reduced supervisor (right) disables event $`V_{in}^{close}`$ at state 1.
 
 ![E2](https://user-images.githubusercontent.com/12836843/156251621-a105b1b1-9e3b-4f3d-a6ef-8a6487138843.jpg)
 
+The next specification (left) is related to the conditions in which the output valve can be closed.  Thus, event $`V_{out}^{close}`$ can only occur after at least one occurrence of event $`L_{L_1}`$. To achieve this behavior, the associated reduced supervisor (right) disables event $`V_{out}^{close}`$ at state 1.
 
+![E3](https://user-images.githubusercontent.com/12836843/156263459-2872176b-66fb-4e78-90d6-1adfd9a9600f.jpg)
+
+The following specification (left) conditions the opening of the output valve to the conclusion of the temperature control. Hence, event $`V_{out}^{open}`$ can only occur after  the occurrence of event $`cooled`$. To achieve this behavior, the associated reduced supervisor (right) disables event $`V_{out}^{open}`$ at state 0.
+
+
+![E5](https://user-images.githubusercontent.com/12836843/156269907-b3712585-df01-4a6d-8fa2-9cfaf5f7cbc9.jpg)
