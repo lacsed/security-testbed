@@ -34,4 +34,4 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 
 ### Software
 
-{% include include/lib/mathjax.html %}
+{% include includes/lib/mathjax.html %}
