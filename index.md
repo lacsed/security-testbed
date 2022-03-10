@@ -1,10 +1,12 @@
 # A Security Testbed for a Networked DES Control System
 
+The contents of this repository are related to the submitted paper to the [16th Workshop on Discrete-Event Systems](https://www.ifac-control.org/conferences/discrete-event-systems-16th-wodes-2022).
+
 ## Process
 
-![main_screen](https://user-images.githubusercontent.com/12836843/122487626-13e78380-cfb2-11eb-9f74-1fe73cbb9f6a.JPG)
+In this section we describe the physical process in which we applied the proposed control solution. The general idea is the production of batches of a liquid that is the product of reactions that happen at different temperatures inside a reactor. A depiction of the process can be seen next.
 
-The general idea is the production of batches of a liquid that is the product of reactions that happen at different temperatures inside a reactor.
+![main_screen](https://user-images.githubusercontent.com/12836843/122487626-13e78380-cfb2-11eb-9f74-1fe73cbb9f6a.JPG)
 
 The process start by the admission of three different liquids, after the Start button is pressed by an operator. It is assumed that the flow of each liquid is defined by a previous process and is out of scope in here. There are three on-off input valves, each one for a different liquid, that receive the same control action, that is, they open and close at the same time. Since the valves remain opened by the same amount of time, the proportion of each liquid in the tank is determined by their flow. 
 
