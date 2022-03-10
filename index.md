@@ -1,4 +1,4 @@
-
+{% include_layouts/default.html %}
 
 # A Security Testbed for a Networked DES Control System
 
@@ -34,4 +34,4 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 
 ### Software
 
-{% include _includes/head.html %}
+
