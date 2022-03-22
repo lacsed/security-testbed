@@ -26,7 +26,7 @@ We introduce the automata models of the subsystems. The models are an abstractio
 The process automaton does not represent a specific subsystem. Instead, it represents the whole system and it is useful when modeling specifications that restrain the behavior of a subsystem to the beggining or to the end of a production cycle. teste1
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/156402392-99313e49-8ec7-458c-805d-fe45e9d9bd43.jpg" width="200" >
+  <img src="https://user-images.githubusercontent.com/12836843/156402392-99313e49-8ec7-458c-805d-fe45e9d9bd43.jpg" width="250" >
 </p>
 
 
