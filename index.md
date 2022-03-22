@@ -28,7 +28,7 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 
 
 <img src="https://user-images.githubusercontent.com/12836843/156402392-99313e49-8ec7-458c-805d-fe45e9d9bd43.jpg" width="100" height="100">
-
+<img width="250" height="400" src="https://raw.githubusercontent.com/12836843/156402392-99313e49-8ec7-458c-805d-fe45e9d9bd43.jpg" />
 
 ### Hardware
 
