@@ -19,7 +19,7 @@ After the mixer has started, a continuous-time PI controller makes the temperatu
 
 ### Subsystems
 
-We introduce the automata models of the subsystems. The models are an abstraction of the real systems and we only consider in here events that are relevant to the cordination between them. Transitions with a streak are labelled with controllable events, while the ones without a streak are labelled with uncontrollable ones. All the models have an uncontrollable reset event  $$rst$$ $$\Sigma$$. This event is useful to restore the sync between the subsystem and supervisors if something fails.
+We introduce the automata models of the subsystems. The models are an abstraction of the real systems and we only consider in here events that are relevant to the cordination between them. Transitions with a streak are labelled with controllable events, while the ones without a streak are labelled with uncontrollable ones. All the models have an uncontrollable reset event  `rst`. This event is useful to restore the sync between the subsystem and supervisors if something fails.
 
 *Process*
 
