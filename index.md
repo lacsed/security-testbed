@@ -1,4 +1,3 @@
-{% include_layouts/default.html %}
 
 # A Security Testbed for a Networked DES Control System
 
