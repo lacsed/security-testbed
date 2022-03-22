@@ -26,16 +26,20 @@ We introduce the automata models of the subsystems. The models are an abstractio
 The process automaton does not represent a specific subsystem. Instead, it represents the whole system and it is useful when modeling specifications that restrain the behavior of a subsystem to the beggining or to the end of a production cycle. 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/156402392-99313e49-8ec7-458c-805d-fe45e9d9bd43.jpg" width="250" >
+  <img src="https://user-images.githubusercontent.com/12836843/159511264-f818acb5-f295-4145-908e-4b2bece43695.png" width="250" >
 </p>
+
 
 *Input valve*
 
 The input valve is represented by a two-state automaton. In the initial state the valve is closed. It opens with the occurrence of event `V_{in}^{open}`. In the open state, the sensor level may trigger event `L_{H_1}`, which is represented as a self-loop. The valve closes with event `V_{in}^{close}`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159498821-77723879-793c-427f-9864-4729ab455b9a.jpg"  width="250">
+  <img src="https://user-images.githubusercontent.com/12836843/159511178-de59fa71-6437-4898-a0e6-49d6a38a2f4a.png"  width="250">
 </p>
+
+
+
 
 ### Hardware
 
