@@ -21,7 +21,7 @@ After the mixer has started, a continuous-time PI controller makes the temperatu
 
 We introduce the automata models of the subsystems. The models are an abstraction of the real systems and we only consider in here events that are relevant to the cordination between them. Transitions with a streak are labelled with controllable events, while the ones without a streak are labelled with uncontrollable ones. All the models have an uncontrollable reset event  `rst`. This event is useful to restore the sync between the subsystem and supervisors if something fails.
 
-*Process*
+ #### Process
 
 The process automaton does not represent a specific subsystem. Instead, it represents the whole system and it is useful when modeling specifications that restrain the behavior of a subsystem to the beggining or to the end of a production cycle. At the initial state the process is at state idle (I). After ocurrence of event `start`, it goes to state working (W). Once the process finishes, event `finish` occurs and it goes to the initial state.
 
@@ -31,7 +31,7 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 
 
 
-*Input valve*
+#### Input valve
 
 The input valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event `V_{in}^{open}`. In the open state, the sensor level may trigger event `L_{H_1}`, which is represented by a self-loop. The valve closes with event `V_{in}^{close}`.
 
@@ -39,7 +39,7 @@ The input valve is represented by a two-state automaton. At the initial state th
   <img src="https://user-images.githubusercontent.com/12836843/159517964-e3ced316-afd7-4970-8a70-942b165b0f72.png" >
 </p>
 
-*Output valve*
+#### Output valve
 
 The output valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event `V_{out}^{open}`. In the open state, the sensor level may trigger event `L_{L_1}`, which is represented by a self-loop. The valve closes with event `V_{out}^{close}`.
 
@@ -47,7 +47,7 @@ The output valve is represented by a two-state automaton. At the initial state t
   <img src="https://user-images.githubusercontent.com/12836843/159518667-0b8ffd7f-62ea-4470-851f-eb4c2ce3c508.png">
 </p>
 
-*Mixer*
+#### Mixer
 
 The behavior of the mixer is represented by a two-state automaton. At the initial state, the mixer is not working (I). Upon the ocurrence of event `M^{on}`, the mixer goes to state working (W). It remains there until event `M^{off}` occurs, leading it back to the initial state.
 
@@ -55,7 +55,7 @@ The behavior of the mixer is represented by a two-state automaton. At the initia
   <img src="https://user-images.githubusercontent.com/12836843/159518739-c6749eb3-9d74-416f-bd5a-2de85a6ef662.png">
 </p>
 
-*Pump*
+#### Pump
 
 The behavior of the pump is represented by a two-state automaton. At the initial state, the pump is not working (I). Upon the ocurrence of event `P^{on}`, the pump goes to state working (W). It remains there until event `P^{off}` occurs, leading it back to the initial state.
 
@@ -63,7 +63,7 @@ The behavior of the pump is represented by a two-state automaton. At the initial
   <img src="https://user-images.githubusercontent.com/12836843/159518827-a1bd05bb-cac1-4705-a669-f3efa4e31176.png">
 </p>
 
-*Temperature control*
+#### Temperature control
 
 The behavior of the continuous-time temperature control is represented by a two-state automaton. The control is initially at the initial state (I). Once event `T^{on}` occurs, the temperature control goes to state working (W). At this state, the continuous-time temperature controller controls the temperature of the liquid in the tank. How this is done, is not relevant for the DES control. For this reason, only events related to the completion of tasks are added in the model. Thus, event `heated` indicates the the liquid has reached the higher temperature and remained in there for a given period of time while event `cooled`  represent that the liquid reached the lower temperature and also remained at it for a given amout of time. The control strategy, setpoints and the periods of time can be latter adjusted by the user.
 
@@ -71,66 +71,80 @@ The behavior of the continuous-time temperature control is represented by a two-
   <img src="https://user-images.githubusercontent.com/12836843/159518900-812a702e-fa14-42d1-8796-07d0c0b2897a.png">
 </p>
 
-#### Specifications and Supervisors
+### Specifications and Supervisors
 
-*Specification `E_1` and Supervisor `S_1`*
+Next we present the specification and supervisor automata for the process. We adopt the Local Modular Supervisory Control approach for obtaining the supervisors, in which we apply a supervisor reduction technique, aiming to obtain even smaller automata. Furthermore, we represent the disablements at a given state of the supervisor by red dashed arrows. If an event is not disabled, then we assume it is enabled. 
+
+#### Specification `E_1` and Supervisor `S_1`
+
+Specification `E_1` conditions the closing of the input valve to the occurrence of event `L_{H_1}`, i.e., the input valve can only be closed when the tank is full. This is accomplished by disabling event `V_{in}^{close}` at state 1 of supervisor `S_1`.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159519826-83859420-4224-4aa3-b50e-29ed1d588ecd.png">
 </p>
 
-*Specification `E_2` and Supervisor `S_2`*
+#### Specification `E_2` and Supervisor `S_2`
+
+Specification `E_2` conditions the closing of the output valve to the occurrence of event `L_{L_1}`, i.e., the output valve can only be closed when the tank is empty. This is accomplished by disabling event `V_{out}^{close}` at state 1 of supervisor `S_2`.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159520233-77fbb392-d96c-46bf-ba7d-37d81683021f.png">
 </p>
 
-*Specification `E_3` and Supervisor `S_3`*
+#### Specification `E_3` and Supervisor `S_3`
+
+Specification `E_3` conditions the opening of the input valve to the occurrence of event `start`, i.e., the input valve can only be opened after the process has started. This is accomplished by disabling event `V_{in}^{open}` at state 0 of supervisor `S_3`.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159520358-8955fe6b-b18c-4b1f-b599-d0857535678c.png">
 </p>
 
-*Specification `E_4` and Supervisor `S_4`*
+#### Specification `E_4` and Supervisor `S_4`
+
+Specification `E_4` conditions the opening of the output valve to the occurrence of event `cooled`, i.e., the output valve can only be opened after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event `V_{out}^{open}` at state 0 of supervisor `S_4`.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159520576-88df63b1-0f11-464a-ace4-dac9c12d54f1.png">
 </p>
 
-*Specification `E_5` and Supervisor `S_5`*
+#### Specification `E_5` and Supervisor `S_5`
+
+Specification `E_5` conditions the starting of the mixer to the occurrence of event `L_{H_1}`, i.e., the mixer can only start when the tank is full. This is accomplished by disabling event `M^{on}` at state 0 of supervisor `S_5`.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159520894-0f999c8e-83b6-4816-8777-5f746af0fe9f.png">
 </p>
 
+#### Specification `E_6` and Supervisor `S_6`
 
-*Specification `E_6` and Supervisor `S_6`*
+Specification `E_6` conditions the stopping of the mixer to the occurrence of event `cooled`, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event `M^{off}` at state 0 of supervisor `S_6`.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159520979-2c525817-a4f6-460b-870d-fa2f5758b695.png">
 </p>
 
+#### Specification `E_7` and Supervisor `S_7`
 
-*Specification `E_7` and Supervisor `S_7`*
+Specification `E_7` conditions the stopping of the mixer to the occurrence of event `cooled`, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event `M^{off}` at state 0 of supervisor `S_6`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159520233-77fbb392-d96c-46bf-ba7d-37d81683021f.png">
+  <img src="https://user-images.githubusercontent.com/12836843/159521149-4fe63211-b248-457d-9b4a-506def8243ca.png">
 </p>
-![e7](https://user-images.githubusercontent.com/12836843/159521149-4fe63211-b248-457d-9b4a-506def8243ca.png)
 
-*Specification `E_8` and Supervisor `S_8`*
+
+#### Specification `E_8` and Supervisor `S_8`
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159521257-aa894c7e-2df9-42f5-9466-ec1e3b87bd22.png">
 </p>
 
-*Specification `E_9` and Supervisor `S_9`*
+#### Specification `E_9` and Supervisor `S_9`
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159521292-27901cac-efbb-4938-94ce-d65ae6c55a64.png">
 </p>
 
-*Specification `E_10` and Supervisor `S_10`*
+#### Specification `E_10` and Supervisor `S_10`
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159521307-a671df0a-a4a7-4dac-ad20-61f4b8b6e5d4.png">
