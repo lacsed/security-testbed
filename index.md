@@ -26,8 +26,9 @@ We introduce the automata models of the subsystems. The models are an abstractio
 The process automaton does not represent a specific subsystem. Instead, it represents the whole system and it is useful when modeling specifications that restrain the behavior of a subsystem to the beggining or to the end of a production cycle. At the initial state the process is at state idle (I). After ocurrence of event `start`, it goes to state working (W). Once the process finishes, event `finish` occurs and it goes to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159511264-f818acb5-f295-4145-908e-4b2bece43695.png" width="350" >
+  <img src="https://user-images.githubusercontent.com/12836843/159518608-cc1402e0-1007-4a5d-b5d4-3b4bcb4b0da7.png" >
 </p>
+
 
 
 *Input valve*
@@ -35,7 +36,7 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 The input valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event `V_{in}^{open}`. In the open state, the sensor level may trigger event `L_{H_1}`, which is represented by a self-loop. The valve closes with event `V_{in}^{close}`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159511178-de59fa71-6437-4898-a0e6-49d6a38a2f4a.png"  width="350">
+  <img src="https://user-images.githubusercontent.com/12836843/159517964-e3ced316-afd7-4970-8a70-942b165b0f72.png" >
 </p>
 
 *Output valve*
@@ -43,7 +44,7 @@ The input valve is represented by a two-state automaton. At the initial state th
 The output valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event `V_{out}^{open}`. In the open state, the sensor level may trigger event `L_{L_1}`, which is represented by a self-loop. The valve closes with event `V_{out}^{close}`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159511907-9a235a5a-520b-4f36-bffb-5cc64db8da93.png"  width="350">
+  <img src="https://user-images.githubusercontent.com/12836843/159518667-0b8ffd7f-62ea-4470-851f-eb4c2ce3c508.png">
 </p>
 
 *Mixer*
@@ -51,7 +52,7 @@ The output valve is represented by a two-state automaton. At the initial state t
 The behavior of the mixer is represented by a two-state automaton. At the initial state, the mixer is not working (I). Upon the ocurrence of event `M^{on}`, the mixer goes to state working (W). It remains there until event `M^{off}` occurs, leading it back to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159513273-fffcc696-56de-44c3-a83e-eb2703449748.png"  width="350">
+  <img src="https://user-images.githubusercontent.com/12836843/159518739-c6749eb3-9d74-416f-bd5a-2de85a6ef662.png">
 </p>
 
 *Pump*
@@ -59,7 +60,7 @@ The behavior of the mixer is represented by a two-state automaton. At the initia
 The behavior of the pump is represented by a two-state automaton. At the initial state, the pump is not working (I). Upon the ocurrence of event `P^{on}`, the pump goes to state working (W). It remains there until event `P^{off}` occurs, leading it back to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159513594-72211251-90a8-43d0-bd82-3f23f7d9afa0.png"  width="350">
+  <img src="https://user-images.githubusercontent.com/12836843/159518827-a1bd05bb-cac1-4705-a669-f3efa4e31176.png">
 </p>
 
 *Temperature control*
@@ -67,10 +68,73 @@ The behavior of the pump is represented by a two-state automaton. At the initial
 The behavior of the continuous-time temperature control is represented by a two-state automaton. The control is initially at the initial state (I). Once event `T^{on}` occurs, the temperature control goes to state working (W). At this state, the continuous-time temperature controller controls the temperature of the liquid in the tank. How this is done, is not relevant for the DES control. For this reason, only events related to the completion of tasks are added in the model. Thus, event `heated` indicates the the liquid has reached the higher temperature and remained in there for a given period of time while event `cooled`  represent that the liquid reached the lower temperature and also remained at it for a given amout of time. The control strategy, setpoints and the periods of time can be latter adjusted by the user.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159515630-2bb78436-4322-4eb4-9e51-4a0c98afa11b.png"  width="350">
+  <img src="https://user-images.githubusercontent.com/12836843/159518900-812a702e-fa14-42d1-8796-07d0c0b2897a.png">
+</p>
+
+#### Specifications and Supervisors
+
+*Specification `E_1` and Supervisor `S_1`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159519826-83859420-4224-4aa3-b50e-29ed1d588ecd.png">
+</p>
+
+*Specification `E_2` and Supervisor `S_2`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159520233-77fbb392-d96c-46bf-ba7d-37d81683021f.png">
+</p>
+
+*Specification `E_3` and Supervisor `S_3`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159520358-8955fe6b-b18c-4b1f-b599-d0857535678c.png">
+</p>
+
+*Specification `E_4` and Supervisor `S_4`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159520576-88df63b1-0f11-464a-ace4-dac9c12d54f1.png">
+</p>
+
+*Specification `E_5` and Supervisor `S_5`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159520894-0f999c8e-83b6-4816-8777-5f746af0fe9f.png">
 </p>
 
 
+*Specification `E_6` and Supervisor `S_6`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159520979-2c525817-a4f6-460b-870d-fa2f5758b695.png">
+</p>
+
+
+*Specification `E_7` and Supervisor `S_7`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159520233-77fbb392-d96c-46bf-ba7d-37d81683021f.png">
+</p>
+![e7](https://user-images.githubusercontent.com/12836843/159521149-4fe63211-b248-457d-9b4a-506def8243ca.png)
+
+*Specification `E_8` and Supervisor `S_8`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159521257-aa894c7e-2df9-42f5-9466-ec1e3b87bd22.png">
+</p>
+
+*Specification `E_9` and Supervisor `S_9`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159521292-27901cac-efbb-4938-94ce-d65ae6c55a64.png">
+</p>
+
+*Specification `E_10` and Supervisor `S_10`*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/159521307-a671df0a-a4a7-4dac-ad20-61f4b8b6e5d4.png">
+</p>
 
 ### Hardware
 
