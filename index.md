@@ -104,7 +104,7 @@ Specification `E_3` conditions the opening of the input valve to the occurrence 
 Specification `E_4` conditions the opening of the output valve to the occurrence of event `cooled`, i.e., the output valve can only be opened after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event `V_{out}^{open}` at state 0 of supervisor `S_4`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159520576-88df63b1-0f11-464a-ace4-dac9c12d54f1.png">
+  <img src="https://user-images.githubusercontent.com/12836843/159537798-eab43e0e-bc17-4b76-a827-f7e586237ddf.png">
 </p>
 
 #### Specification `E_5` and Supervisor `S_5`
@@ -125,11 +125,12 @@ Specification `E_6` conditions the stopping of the mixer to the occurrence of ev
 
 #### Specification `E_7` and Supervisor `S_7`
 
-Specification `E_7` conditions the stopping of the mixer to the occurrence of event `cooled`, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event `M^{off}` at state 0 of supervisor `S_6`.
+Specification `E_7` conditions the starting of the pump to the occurrence of event `heated`, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event `M^{off}` at state 0 of supervisor `S_6`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159521149-4fe63211-b248-457d-9b4a-506def8243ca.png">
+  <img src="https://user-images.githubusercontent.com/12836843/159537737-93b8a6ce-702f-4823-9201-6e504ca88744.png">
 </p>
+
 
 
 #### Specification `E_8` and Supervisor `S_8`
