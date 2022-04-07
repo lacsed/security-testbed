@@ -1,4 +1,4 @@
-{% include lib/mathjax.html %}
+{% include _includes/lib/mathjax.html %}
 
 # A Security Testbed for a Networked DES Control System
 
