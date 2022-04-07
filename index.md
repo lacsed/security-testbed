@@ -33,43 +33,48 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 
 #### Input valve
 
-The input valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event $$V_{in}^{open}$$. In the open state, the sensor level may trigger event $$L_{H_1}$$, which is represented by a self-loop. The valve closes with event $$V_{in}^{close}$$. 
+The input valve is represented by a two-state automaton. At the initial state the valve is closed ($$C$$). It opens ($$O$$) with the occurrence of event $$V_{in}^{open}$$. In the open state, the sensor level may trigger event $$L_{H_1}$$, which is represented by a self-loop. The valve closes with event $$V_{in}^{close}$$. 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159517964-e3ced316-afd7-4970-8a70-942b165b0f72.png" >
+  <img src="https://user-images.githubusercontent.com/12836843/162103723-8fc3df3c-abc1-4d02-9ea0-4ac3df21dced.png" >
 </p>
+
 
 #### Output valve
 
-The output valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event $$V_{out}^{open}$$. In the open state, the sensor level may trigger event $$L_{L_1}$$, which is represented by a self-loop. The valve closes with event $$V_{out}^{close}$$.
+The output valve is represented by a two-state automaton. At the initial state the valve is closed ($$C$$). It opens ($$O$$) with the occurrence of event $$V_{out}^{open}$$. In the open state, the sensor level may trigger event $$L_{L_1}$$, which is represented by a self-loop. The valve closes with event $$V_{out}^{close}$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159518667-0b8ffd7f-62ea-4470-851f-eb4c2ce3c508.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162103843-96929f5a-2a7f-48de-a547-9a9f9b3a0840.png">
 </p>
+
 
 #### Mixer
 
-The behavior of the mixer is represented by a two-state automaton. At the initial state, the mixer is not working (I). Upon the ocurrence of event $$M^{on}$$, the mixer goes to state working (W). It remains there until event $$M^{off}$$ occurs, leading it back to the initial state.
+The behavior of the mixer is represented by a two-state automaton. At the initial state, the mixer is not working ($$I$$). Upon the ocurrence of event $$M^{on}$$, the mixer goes to state working ($$W$$). It remains there until event $$M^{off}$$ occurs, leading it back to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159518739-c6749eb3-9d74-416f-bd5a-2de85a6ef662.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162103972-c000c865-bfd1-4df4-b40c-52e6b1032c71.png">
 </p>
+
 
 #### Pump
 
-The behavior of the pump is represented by a two-state automaton. At the initial state, the pump is not working (I). Upon the ocurrence of event $$P^{on}$$, the pump goes to state working (W). It remains there until event $$P^{off}$$ occurs, leading it back to the initial state.
+The behavior of the pump is represented by a two-state automaton. At the initial state, the pump is not working ($$I$$). Upon the ocurrence of event $$P^{on}$$, the pump goes to state working ($$W$$). It remains there until event $$P^{off}$$ occurs, leading it back to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159518827-a1bd05bb-cac1-4705-a669-f3efa4e31176.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162104090-d66e9644-13a1-4cb8-8096-8b3946a17537.png">
 </p>
+
 
 #### Temperature control
 
-The behavior of the continuous-time temperature control is represented by a two-state automaton. The control is initially at the initial state (I). Once event $$T^{on}$$ occurs, the temperature control goes to state working (W). At this state, the continuous-time temperature controller controls the temperature of the liquid in the tank. How this is done, is not relevant for the DES control. For this reason, only events related to the completion of tasks are added in the model. Thus, event $$heated$$ indicates the the liquid has reached the higher temperature and remained in there for a given period of time while event $$cooled$$  represent that the liquid reached the lower temperature and also remained at it for a given amout of time. The control strategy, setpoints and the periods of time can be latter adjusted by the user.
+The behavior of the continuous-time temperature control is represented by a two-state automaton. The control is initially at the initial state ($$I$$). Once event $$T^{on}$$ occurs, the temperature control goes to state working ($$W$$). At this state, the continuous-time temperature controller controls the temperature of the liquid in the tank. How this is done, is not relevant for the DES control. For this reason, only events related to the completion of tasks are added in the model. Thus, event $$heated$$ indicates the the liquid has reached the higher temperature and remained in there for a given period of time while event $$cooled$$  represent that the liquid reached the lower temperature and also remained at it for a given amout of time. The control strategy, setpoints and the periods of time can be latter adjusted by the user.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159518900-812a702e-fa14-42d1-8796-07d0c0b2897a.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162104323-c057993c-2622-47e9-b83c-4813426c5455.png">
 </p>
+
 
 ### Specifications and Supervisors
 
@@ -80,76 +85,81 @@ Next we present the specification and supervisor automata for the process. We ad
 Specification $$E_1$$ conditions the closing of the input valve to the occurrence of event $$L_{H_1}$$, i.e., the input valve can only be closed when the tank is full. This is accomplished by disabling event $$V_{in}^{close}$$ at state 1 of supervisor $$S_1$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159519826-83859420-4224-4aa3-b50e-29ed1d588ecd.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162104639-fdfe7599-23f4-4d97-a238-c40525eb7616.png">
 </p>
+
 
 #### Specification $$E_2$$ and Supervisor $$S_2$$
 
 Specification $$E_2$$ conditions the closing of the output valve to the occurrence of event $$L_{L_1}$$, i.e., the output valve can only be closed when the tank is empty. This is accomplished by disabling event $$V_{out}^{close}$$ at state 1 of supervisor $$S_2$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159520233-77fbb392-d96c-46bf-ba7d-37d81683021f.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162104751-293e45d4-b1c1-4665-a5a8-ab7ffddcebbd.png">
 </p>
+
 
 #### Specification $$E_3$$ and Supervisor $$S_3$$
 
 Specification $$E_3$$ conditions the opening of the input valve to the occurrence of event $$start$$, i.e., the input valve can only be opened after the process has started. This is accomplished by disabling event $$V_{in}^{open}$$ at state 0 of supervisor $$S_3$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159520358-8955fe6b-b18c-4b1f-b599-d0857535678c.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162104955-177161b0-7ee1-436d-9b3e-c4394a3fea1b.png">
 </p>
+
 
 #### Specification $$E_4$$ and Supervisor $$S_4$$
 
 Specification $$E_4$$ conditions the opening of the output valve to the occurrence of event $$cooled$$, i.e., the output valve can only be opened after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event $$V_{out}^{open}$$ at state 0 of supervisor $$S_4$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159537798-eab43e0e-bc17-4b76-a827-f7e586237ddf.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105108-91246327-0938-4f6b-8f53-5dd82a87df14.png">
 </p>
+
 
 #### Specification $$E_5$$ and Supervisor $$S_5$$
 
 Specification $$E_5$$ conditions the starting of the mixer to the occurrence of event $$L_{H_1}$$, i.e., the mixer can only start when the tank is full. This is accomplished by disabling event $$M^{on}$$ at state 0 of supervisor $$S_5$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159520894-0f999c8e-83b6-4816-8777-5f746af0fe9f.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105240-aa468e73-e852-4b54-bfbf-f0193e51e922.png">
 </p>
+
 
 #### Specification $$E_6$$ and Supervisor $$S_6$$
 
 Specification $$E_6$$ conditions the stopping of the mixer to the occurrence of event $$cooled$$, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event $$M^{off}$$ at state 0 of supervisor $$S_6$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159520979-2c525817-a4f6-460b-870d-fa2f5758b695.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105348-099408cb-59c6-4013-9ab3-74729dcb230b.png">
 </p>
+
 
 #### Specification $$E_7$$ and Supervisor $$S_7$$
 
 Specification $$E_7$$ conditions the starting of the pump to the occurrence of event $$heated$$, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event $$M^{off}$$ at state 0 of supervisor $$S_6$$.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159537737-93b8a6ce-702f-4823-9201-6e504ca88744.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105482-78c87ec4-2b66-4d04-ae1d-3c067ae14e8a.png">
 </p>
-
-
 
 #### Specification $$E_8$$ and Supervisor $$S_8$$
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159521257-aa894c7e-2df9-42f5-9466-ec1e3b87bd22.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105594-587e0748-4c6d-4473-b58b-0611f33abea5.png">
 </p>
 
 #### Specification $$E_9$$ and Supervisor $$S_9$$
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159521292-27901cac-efbb-4938-94ce-d65ae6c55a64.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105690-d9b81851-13d8-46ac-b90f-1e12262664b5.png">
 </p>
 
 #### Specification $$E_10$$ and Supervisor $$S_10$$
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159521307-a671df0a-a4a7-4dac-ad20-61f4b8b6e5d4.png">
+  <img src="https://user-images.githubusercontent.com/12836843/162105818-d22a3a7a-4ee9-4c65-8cb6-88128ab44900.png">
 </p>
+
 
 ### Hardware
 
