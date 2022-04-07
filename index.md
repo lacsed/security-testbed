@@ -22,12 +22,12 @@ After the mixer has started, a continuous-time PI controller makes the temperatu
 
 We introduce the automata models of the subsystems. The models are an abstraction of the real systems and we only consider in here events that are relevant to the cordination between them. Transitions with a streak are labelled with controllable events, while the ones without a streak are labelled with uncontrollable ones. All the models have an uncontrollable reset event  $$rst$$. This event is useful to restore the sync between the subsystem and supervisors if something fails.
 
- #### Process
+#### Process
 
 The process automaton does not represent a specific subsystem. Instead, it represents the whole system and it is useful when modeling specifications that restrain the behavior of a subsystem to the beggining or to the end of a production cycle. At the initial state the process is at state idle (I). After ocurrence of event $$start$$, it goes to state working (W). Once the process finishes, event $$finish$$ occurs and it goes to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/159518608-cc1402e0-1007-4a5d-b5d4-3b4bcb4b0da7.png" >
+  <img src="https://user-images.githubusercontent.com/12836843/162099752-57dde7d4-da76-4cbe-911c-81835c6abfcb.png" >
 </p>
 
 
