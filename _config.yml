@@ -1,4 +1,5 @@
 theme: jekyll-theme-leap-day
+title: A Security Testbed for a Networked DES Control System
 
 # Build settings
 markdown: kramdown
