@@ -34,7 +34,7 @@ The process automaton does not represent a specific subsystem. Instead, it repre
 
 #### Input valve
 
-The input valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event `V_{in}^{open}`. In the open state, the sensor level may trigger event `L_{H_1}`, which is represented by a self-loop. The valve closes with event `V_{in}^{close}`.
+The input valve is represented by a two-state automaton. At the initial state the valve is closed (C). It opens (O) with the occurrence of event `V_{in}^{open}`. In the open state, the sensor level may trigger event `L_{H_1}`, which is represented by a self-loop. The valve closes with event `V_{in}^{close}`.  $`a^2 + b^2 = c^2`$
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/159517964-e3ced316-afd7-4970-8a70-942b165b0f72.png" >
