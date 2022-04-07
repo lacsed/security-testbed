@@ -27,16 +27,9 @@ We introduce the automata models of the subsystems. The models are an abstractio
 The process automaton does not represent a specific subsystem. Instead, it represents the whole system and it is useful when modeling specifications that restrain the behavior of a subsystem to the beggining or to the end of a production cycle. At the initial state the process is at state idle ($$I$$). After ocurrence of event $$start$$, it goes to state working ($$W$$). Once the process finishes, event $$finish$$ occurs and it goes to the initial state.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/162101695-b1f6caff-0cc9-4560-b104-113bee37e847.png" >
+  <img src="https://user-images.githubusercontent.com/12836843/162103287-8f99e6a9-0b7f-4e66-8805-0470efeaf98e.png" >
 </p>
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/12836843/162102682-12fdc364-714e-4f44-ad83-1579ab01ed6a.png" >
-
-<img src="https://user-images.githubusercontent.com/12836843/162102689-170008ec-312e-41b4-97b3-e42f70fda132.png" >
-
-<img src="https://user-images.githubusercontent.com/12836843/162102696-ac91554b-3b5b-4be7-84dc-8469963602b8.png" >
- </p>
 
 #### Input valve
 
