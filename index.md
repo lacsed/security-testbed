@@ -1,6 +1,3 @@
----
-layout: base
----
 
 
 # A Security Testbed for a Networked DES Control System
