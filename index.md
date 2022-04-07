@@ -30,9 +30,13 @@ The process automaton does not represent a specific subsystem. Instead, it repre
   <img src="https://user-images.githubusercontent.com/12836843/162101695-b1f6caff-0cc9-4560-b104-113bee37e847.png" >
 </p>
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/12836843/162102682-12fdc364-714e-4f44-ad83-1579ab01ed6a.png" >
 
+<img src="https://user-images.githubusercontent.com/12836843/162102689-170008ec-312e-41b4-97b3-e42f70fda132.png" >
 
-
+<img src="https://user-images.githubusercontent.com/12836843/162102696-ac91554b-3b5b-4be7-84dc-8469963602b8.png" >
+ </p>
 
 #### Input valve
 
