@@ -136,7 +136,7 @@ Specification $$E_6$$ conditions the stopping of the mixer to the occurrence of 
 
 #### Specification $$E_7$$ and Supervisor $$S_7$$
 
-Specification $$E_7$$ conditions the starting of the pump to the occurrence of event $$heated$$, i.e., the mixer can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event $$M^{off}$$ at state 0 of supervisor $$S_6$$.
+Specification $$E_7$$ conditions the starting of the pump to the occurrence of event $$heated$$, i.e., the pump can only start after the liquid has been heated. This is accomplished by disabling event $$P^{on}$$ at states 0 and 2 of supervisor $$S_7$$.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/162105482-78c87ec4-2b66-4d04-ae1d-3c067ae14e8a.png">
@@ -144,17 +144,23 @@ Specification $$E_7$$ conditions the starting of the pump to the occurrence of e
 
 #### Specification $$E_8$$ and Supervisor $$S_8$$
 
+Specification $$E_8$$ conditions the stopping  of the pump to the occurrence of event $$cooled$$, i.e., the pump can only stop after the liquid has been cooled, which is the last step of production. This is accomplished by disabling event $$P^{off}$$ at states 0 and 2 of supervisor $$S_8$$.
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/162105594-587e0748-4c6d-4473-b58b-0611f33abea5.png">
 </p>
 
 #### Specification $$E_9$$ and Supervisor $$S_9$$
 
+Specification $$E_9$$ conditions the starting of the temperature control to the occurrence of event $$L_{H_1}$$, i.e., the temperature control can only start after the tank is filled. This is accomplished by disabling event $$T^{on}$$ at state 0 of supervisor $$S_9$$.
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/162105690-d9b81851-13d8-46ac-b90f-1e12262664b5.png">
 </p>
 
-#### Specification $$E_10$$ and Supervisor $$S_10$$
+#### Specification $$E_{10}$$ and Supervisor $$S_{10}$$
+
+Specification $$E_{10}$$ conditions the stopping of the temperature control to the occurrence of event $$heated$$ followed by $$cooled$$, i.e., the temperature control can only stop after the temperature has reached the higher and lower setpoints. This is accomplished by disabling event $$T^{off}$$ at states 1 and 2 of supervisor $$S_{10}$$.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/162105818-d22a3a7a-4ee9-4c65-8cb6-88128ab44900.png">
