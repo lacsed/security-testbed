@@ -18,6 +18,8 @@ After the mixer has started, a continuous-time PI controller makes the temperatu
 
 ## Models
 
+In the following we present the models of subsystems, specifications and reduced supervisors. The reduced supervisors were obtained by using the computational tool [Ultrades](https://github.com/lacsed/UltraDES), with the code available in [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/models_github.linq)
+
 ### Subsystems
 
 We introduce the automata models of the subsystems. The models are an abstraction of the real systems and we only consider in here events that are relevant to the cordination between them. Transitions with a streak are labelled with controllable events, while the ones without a streak are labelled with uncontrollable ones. All the models have an uncontrollable reset event  $$rst$$. This event is useful to restore the sync between the subsystem and supervisors if something fails.
