@@ -18,7 +18,7 @@ After the mixer has started, a continuous-time PI controller makes the temperatu
 
 ## Models
 
-In the following we present the models of subsystems, specifications and reduced supervisors. The reduced supervisors were obtained by using the computational tool [Ultrades](https://github.com/lacsed/UltraDES), with the code available in [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/models_github.linq)
+In the following we present the models of subsystems, specifications and reduced supervisors. The reduced supervisors were obtained by using the computational tool [Ultrades](https://github.com/lacsed/UltraDES), with the code available in [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/models_github.linq).
 
 ### Subsystems
 
