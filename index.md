@@ -171,21 +171,62 @@ Specification $$E_{10}$$ conditions the stopping of the temperature control to t
 
 ### Hardware
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/163293166-7528e2a0-3efd-4b73-b0c8-b5df49519f82.png">
-</p>
+In this section we describe the hardware employed to implement the control system. All nodes are implemented by Arduino boards. There is no restriction regarding the specific type of board to use in each node. Note, however, that depending on additional functionalities one want to add to a specific node, a board with higher  specifications may be needed.
+
+The communication between devices is made by means of the [CAN protocol](https://www.ti.com/lit/an/sloa101b/sloa101b.pdf). We use the Arduino-compatible [CAN module MCP2515](https://www.ebay.com/itm/253369172743?_trkparms=ispr%3D1&hash=item3afdfac307:g:Z4wAAOSw9tlb4ifz&amdata=enc%3AAQAGAAAA4Nl%2F9N0iNYGQwO1Ki8eAB9GJ2ZgW11ahP9SFWkemlnqxOr041iMsZOreUfz6EGv%2BCABhGa9xo0VLJFZZUvveq2XqL5IEd4Mf9xQ45nB4v3hwVaOSHjQ5lpZmjWNs1x4z7CwO6qzNWdr4wYcklSlxkSaKbILHFg4wsQ%2Fq5rktKdsbP1MbV373Ub9E5V81Lb%2BHWdw1bGCdVpmTMwRBpkWmeeAvvjQctenVkNfL23SRbrVFm196NVCSFXCNEqWkBMvcbYXn1n%2F3yrL3n%2F0R9F%2BbJZkaQm%2F1EgXWsk38mMo3R1UO%7Ctkp%3ABFBMtKKU2oRg) as the interface between the devices and the CAN bus.
+
+#### Controller
+
+The main node of the system is the controller. It is implemented by a Arduino Mega board. The physical connections between the board and the MCP2515 module are shown in the figure below. Click [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/controller.fzz) to access the fritzing file of this node.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/163293173-9b832f10-c8e7-48b7-a571-6d32409c14f6.png">
+  <img src="https://user-images.githubusercontent.com/12836843/163293671-04c68655-bd53-42fe-a31c-581ce5f981a5.png">
 </p>
+
+#### Node 1
+
+This node is implemented in a Arduino Uno board. Click [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/node1.fzz) to access the fritzing file of this node.
+
+We have connected to this node:
+- Input valve (green LED): pin 4;
+- Output valve (red LED): pin 3;
+- Temperature sensor (output of RC circuit): pin A1;
+- Heater (input of RC circuit): pin 5;
+- CAN module MCP2515: connections are shown below.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/163298791-7a462059-242e-4cf4-a82c-93977e3ba51e.png">
+</p>
+
+
+#### Node 2
+
+This node is implemented in a Arduino Nano board. Click [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/node2.fzz) to access the fritzing file of this node. The LCD allows us to monitor continous time variables, such as temperature and level.
+
+
+We have connected to this node:
+- Mixer (yellow LED): pin D4;
+- Pump (blue LED): pin D3;
+- Level sensor (trimpot): pin A0;
+- LCD display: pins A4 and A5;
+- CAN module MCP2515: connections are shown below.
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/163293179-eda765ce-f889-4e95-8bb6-93da1cfdee4c.png">
+</p>
+
+#### Node 3
+
+This node is implemented in a Arduino Uno board. Click [here](https://github.com/michelrodrigo/DES-control-system/blob/gh-pages/sources/node3.fzz) to access the fritzing file of this node.
+
+This node is used to implement the IDS. A identical node is used to implement the human-machine interface.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/12836843/163293176-f0578ac8-b765-4f5e-9e73-bfc466845a3a.png">
 </p>
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/163293179-eda765ce-f889-4e95-8bb6-93da1cfdee4c.png">
-</p>
+
 ### Software
 
 
