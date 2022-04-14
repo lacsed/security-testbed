@@ -171,8 +171,21 @@ Specification $$E_{10}$$ conditions the stopping of the temperature control to t
 
 ### Hardware
 
-teste
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/163293166-7528e2a0-3efd-4b73-b0c8-b5df49519f82.png">
+</p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/163293173-9b832f10-c8e7-48b7-a571-6d32409c14f6.png">
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/163293176-f0578ac8-b765-4f5e-9e73-bfc466845a3a.png">
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12836843/163293179-eda765ce-f889-4e95-8bb6-93da1cfdee4c.png">
+</p>
 ### Software
 
 
