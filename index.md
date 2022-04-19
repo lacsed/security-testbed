@@ -235,4 +235,10 @@ This node is used to implement the IDS. A identical node is used to implement th
 
 ### Software
 
+The code for each node is available below.
+
+- [Controller](https://github.com/michelrodrigo/DES-control-system/tree/gh-pages/sources/codes/decentralized/controller)
+- [Node 1](https://github.com/michelrodrigo/DES-control-system/tree/gh-pages/sources/codes/decentralized/node1)
+- [Node 2](https://github.com/michelrodrigo/DES-control-system/tree/gh-pages/sources/codes/decentralized/node2)
+- [Node 3](https://github.com/michelrodrigo/DES-control-system/tree/gh-pages/sources/codes/decentralized/node3)
 
