@@ -201,7 +201,7 @@ We have connected to this node:
 - CAN module MCP2515: connections are shown below.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/163298791-7a462059-242e-4cf4-a82c-93977e3ba51e.png">
+  <img src="https://user-images.githubusercontent.com/12836843/164058911-8fd683f2-e9fe-416f-93e3-acf24b7b8e23.png">
 </p>
 
 
@@ -218,8 +218,9 @@ We have connected to this node:
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/164055176-1021bb71-0a79-4940-a62b-d0112c8b5ad6.png">
+  <img src="https://user-images.githubusercontent.com/12836843/164059002-55922e4e-1130-4af4-85ea-7600237fe373.png">
 </p>
+
 
 #### Node 3
 
@@ -228,7 +229,7 @@ This node is implemented in a Arduino Uno board. Click [here](https://github.com
 This node is used to implement the IDS. A identical node is used to implement the human-machine interface.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/12836843/163293176-f0578ac8-b765-4f5e-9e73-bfc466845a3a.png">
+  <img src="https://user-images.githubusercontent.com/12836843/164059045-8edd51fa-168b-41b6-ac12-0136951c07cc.png">
 </p>
 
 
