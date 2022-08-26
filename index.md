@@ -2,7 +2,7 @@
 
 # A Security Testbed for a Networked DES Control System
 
-The contents of this repository are related to the submitted paper to the [16th Workshop on Discrete-Event Systems](https://www.ifac-control.org/conferences/discrete-event-systems-16th-wodes-2022).
+The contents of this repository are related to the accepted paper in the [16th Workshop on Discrete-Event Systems](https://www.ifac-control.org/conferences/discrete-event-systems-16th-wodes-2022).
 
 ## Process
 
